@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/style.css" />
     <title>회원 가입</title>
   </head>
   <body>
@@ -15,12 +16,7 @@
           <legend>계정 정보</legend>
           <p>
             <label for="username">사용자 이름:</label>
-            <input
-              type="text"
-              id="username"
-              name="username"
-              required
-            /><br /><br />
+            <input type="text" id="username" name="username" required />
             <small>(필수)</small>
           </p>
           <p>
@@ -76,7 +72,7 @@
             </label>
           </p>
           <p>
-            관심 분야 (중복 선택 가능): <br />
+            관심 분야 (중복 선택 가능): <br /><br
             <label
               ><input type="checkbox" name="userInterest" value="frontend" /> 웹
               프론트엔드 (Vue.js, React 등)</label
