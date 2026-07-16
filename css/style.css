@@ -198,17 +198,6 @@ nav ul {
     gap: 20px;
 }
 
-nav a {
-    padding: 8px 16px;
-    border-radius: 4px;
-    transition: background-color 0.3s ease, color 0.3s ease; /* 부드러운 변화 */
-}
-
-nav a:hover {
-    background-color: #16a085;
-    color: #ffffff;
-}
-
 /* Grid 활용: 여행지 앨범 3열 바둑판 배치 */
 .trip-grid-container {
     display: grid;
@@ -229,7 +218,6 @@ main {
 aside {
     flex: 3;            /* 전체 공간 중 30%만큼의 비율을 차지 */
     background-color: #f8f9fa; /* 사이드바 구분을 위해 연한 배경색 추가 */
-    padding: 15px;
     border-radius: 6px;
 }
 
@@ -268,15 +256,14 @@ aside {
    ========================================================================== */
 /* [1-1] 메뉴 바 링크 호버 효과 */
 nav a {
-    /* 배경색과 글자색이 바뀔 때 0.3초 동안 부드럽게 스르륵 변하도록 설정 */
     transition: background-color 0.3s ease, color 0.3s ease;
     padding: 6px 12px;
     border-radius: 4px;
 }
 
 nav a:hover {
-    background-color: #16a085;      /* 마우스를 올리면 포인트 청록색 배경 */
-    color: #ffffff;                 /* 글자색은 흰색으로 변경 */
+    background-color: #4e92bf;      
+    color: #ffffff;                
 }
 
 /* [1-2] 회원가입 및 다시작성 버튼 호버 효과 */
