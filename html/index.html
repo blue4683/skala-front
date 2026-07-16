@@ -4,9 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../css/style.css" />
-    <script src="../script/upDown.js"></script>
-    <script src="../script/grade.js"></script>
-    <script src="../script/bag.js"></script>
     <title>Welcome SKALA</title>
   </head>
   <body>
@@ -49,17 +46,25 @@
       <aside>
         <h2>📍 실시간 정보</h2>
         <p>현재 위치: 전남광주통합특별시 광산구</p>
-        <p>오늘의 날씨: 맑음, 30°C</p>
+        <section>
+          <h3>🌤️ 날씨 정보</h3>
+          <select id="city-select">
+            <option value="none">도시를 선택해주세요.</option>
+            <option value="35.1536606,126.7942767">대한민국 광주</option>
+            <option value="37.56,126.97">대한민국 서울</option>
+            <option value="35.6895,139.6917">일본 도쿄</option>
+            <option value="48.8566,2.3522">프랑스 파리</option>
+          </select>
+          <div id="weather-box">
+            <p>날씨 정보를 확인하려면 도시를 선택하세요.</p>
+          </div>
+        </section>
         <section>
           <h3>🎮 게임</h3>
-          <button class="btn-submit" onclick="startGame()">
-            🎮 업다운 게임
-          </button>
-          <button class="btn-submit" onclick="checkGrade()">
-            🎮 성적 계산기
-          </button>
-          <button class="btn-submit" onclick="showMyBag()">
-            🎮 가방 속 아이템 확인
+          <button class="btn-submit" id="btn-game">📊 업다운 게임</button>
+          <button class="btn-submit" id="btn-grade">💯 성적 계산기</button>
+          <button class="btn-submit" id="btn-bag">
+            🧳 가방 속 아이템 확인
           </button>
         </section>
       </aside>
@@ -71,5 +76,8 @@
     </footer>
   </body>
 </html>
-
-<script></script>
+<!-- <script src="../script/weather.js"></script> -->
+<script src="../script/upDown.js"></script>
+<script src="../script/grade.js"></script>
+<script src="../script/bag.js"></script>
+<script type="module" src="../script/realtimeInfo.js"></script>

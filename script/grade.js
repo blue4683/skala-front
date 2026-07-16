@@ -1,18 +1,25 @@
-function checkGrade() {
+const btnGrade = document.querySelector("#btn-grade");
+
+btnGrade.addEventListener("click", function () {
   var subjects = ["HTML", "CSS", "JavaScript"];
   var total = 0;
+  const regex = /\d+/; // 숫자만 있는지 확인하는 정규식
 
   for (var i = 0; i < subjects.length; i++) {
     while (true) {
       var score = prompt(subjects[i] + " 점수를 입력해 주세요. (0 ~ 100)");
       console.log(score);
-      if (score === null || score.trim() === "") {
-        alert("올바른 숫자가 입력되지 않아 계산을 취소합니다.");
+      if (score === null) {
+        alert("취소되었습니다. 성적 계산기를 종료합니다.");
         return;
       }
 
+      if (!regex.test(score)) {
+        alert("⚠️ 올바른 숫자를 입력하지 않으셨습니다. 다시 시도해 주세요.");
+        continue;
+      }
+
       score = Number(score);
-      console.log(score);
       if (score >= 0 && score <= 100) {
         total += score;
         break;
@@ -45,4 +52,4 @@ function checkGrade() {
       "• 결과: " +
       result,
   );
-}
+});

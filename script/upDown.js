@@ -1,22 +1,24 @@
-// ==========================================================================
-// [수정버전] 버튼을 눌러야 시작하는 업다운 게임
-// ==========================================================================
+const btnGame = document.querySelector("#btn-game");
 
-// HTML에서 onclick="startGame()"을 호출하면 이 상자 안의 코드가 비로소 실행됩니다.
-function startGame() {
+btnGame.addEventListener("click", function () {
   var computerNum = Math.floor(Math.random() * 50) + 1;
   var count = 0;
 
   console.log("이번 판 컴퓨터의 비밀 숫자: " + computerNum);
-
+  const regex = /\d+/; // 숫자만 있는지 확인하는 정규식
   while (true) {
     var userGuess = prompt(
       "1부터 50 사이의 숫자 중 컴퓨터가 생각한 숫자는 무엇일까요?",
     );
 
-    if (userGuess === null || userGuess.trim() === "") {
+    if (userGuess === null) {
       alert("게임이 취소되었습니다.");
       break;
+    }
+
+    if (!regex.test(userGuess)) {
+      alert("⚠️ 올바른 숫자를 입력하지 않으셨습니다. 다시 시도해 주세요.");
+      continue;
     }
 
     userGuess = Number(userGuess);
@@ -45,4 +47,4 @@ function startGame() {
       alert("⚠️ 올바른 숫자를 입력하지 않으셨습니다. 다시 시도해 주세요.");
     }
   }
-}
+});

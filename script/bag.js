@@ -1,4 +1,6 @@
-function showMyBag() {
+const btnBag = document.querySelector("#btn-bag");
+
+btnBag.addEventListener("click", function () {
   var myBag = [
     { name: "여권 ✈️", count: 1 },
     { name: "스마트폰 📱", count: 2 },
@@ -16,4 +18,4 @@ function showMyBag() {
   resultText = resultText + "총 물품 종류: " + myBag.length + "가지";
 
   alert(resultText);
-}
+});
