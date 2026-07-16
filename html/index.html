@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../css/style.css" />
+    <script
+      type="text/javascript"
+      src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e68acb6e4af2cf03bc6438775921a386&libraries=services"
+    ></script>
+
     <title>Welcome SKALA</title>
   </head>
   <body>
@@ -45,7 +50,9 @@
 
       <aside>
         <h2>📍 실시간 정보</h2>
-        <p>현재 위치: 전남광주통합특별시 광산구</p>
+        <div id="location-box">
+          <p>위치 정보를 가져오는 중...</p>
+        </div>
         <section>
           <h3>🌤️ 날씨 정보</h3>
           <select id="city-select">
@@ -80,4 +87,5 @@
 <script src="../script/upDown.js"></script>
 <script src="../script/grade.js"></script>
 <script src="../script/bag.js"></script>
+<script src="../script/location.js"></script>
 <script type="module" src="../script/realtimeInfo.js"></script>
