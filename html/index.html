@@ -27,6 +27,30 @@
       </ul>
     </nav>
     <hr />
+    <div id="bag-modal" class="modal">
+      <div class="modal-content">
+        <h2>🎒 여행 가방 꾸리기</h2>
+
+        <div class="item-list">
+          <button class="item" data-name="여권 ✈️">✈️<br />여권</button>
+          <button class="item" data-name="스마트폰 📱">📱<br />스마트폰</button>
+          <button class="item" data-name="지갑 💳">💳<br />지갑</button>
+          <button class="item" data-name="카메라 📷">📷<br />카메라</button>
+          <button class="item" data-name="모자 🧢">🧢<br />모자</button>
+          <button class="item" data-name="선글라스 🕶️">🕶️<br />선글라스</button>
+        </div>
+
+        <hr />
+
+        <h3>현재 가방</h3>
+
+        <ul id="bag-items"></ul>
+
+        <p id="bag-total">총 0종류</p>
+
+        <button id="close-modal">닫기</button>
+      </div>
+    </div>
     <div class="content-wrapper">
       <section>
         <main>
@@ -41,15 +65,20 @@
           <h3>📸 이달의 베스트 컷</h3>
           <p class="trip-card">
             <img
+              id="random-image"
               src="../media/제주도.jpeg"
               alt="제주도 성산일출봉"
-            /><br />제주도의 성산일출봉을 촬영한 모습 (2016년 촬영)
+            /><br />
+            <span id="image-caption"
+              >제주도의 성산일출봉을 촬영한 모습 (2016년 촬영)</span
+            >
           </p>
         </main>
       </section>
 
       <aside>
         <h2>📍 실시간 정보</h2>
+        <h3>🧭 위치 정보</h3>
         <div id="location-box">
           <p>위치 정보를 가져오는 중...</p>
         </div>
@@ -70,9 +99,7 @@
           <h3>🎮 게임</h3>
           <button class="btn-submit" id="btn-game">📊 업다운 게임</button>
           <button class="btn-submit" id="btn-grade">💯 성적 계산기</button>
-          <button class="btn-submit" id="btn-bag">
-            🧳 가방 속 아이템 확인
-          </button>
+          <button class="btn-submit" id="btn-bag">🧳 여행 가방 꾸리기</button>
         </section>
       </aside>
     </div>
@@ -84,6 +111,7 @@
   </body>
 </html>
 <!-- <script src="../script/weather.js"></script> -->
+<script src="../script/imageRandom.js"></script>
 <script src="../script/upDown.js"></script>
 <script src="../script/grade.js"></script>
 <script src="../script/bag.js"></script>

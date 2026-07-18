@@ -95,7 +95,6 @@ li, dd {
     display: block;              
     margin-bottom: 12px;    
     max-width: 100%;           
-    height: auto;
 }
 
 /* 시간표 테이블 정돈 (myClass.html) */
@@ -298,6 +297,31 @@ nav a:hover {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* 그림자를 더 넓고 진하게 하여 공중 붕 뜬 입체감 부여 */
 }
 
+#image-caption {
+    opacity: 1.0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#image-caption.fade-out {
+    opacity: 0;
+}
+
+#random-image {
+    width: 400px;
+    height: 300px;
+    opacity: 1.0;
+    transition: opacity 0.5s ease-in-out, box-shadow 0.3s ease;
+}
+
+#random-image.fade-out {
+    opacity: 0;
+}
+
+#random-image:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
 /* 3. 메인 페이지 웰컴 키프레임 애니메이션 (@keyframes) */
 
 /* [3-1] 아래에서 위로 부드럽게 페이드인 되는 애니메이션 설정 구조 정의 */
@@ -346,4 +370,82 @@ aside section:last-child button {
 aside section:last-child button:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.5);
+
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  width: 500px;
+  text-align: center;
+}
+
+.item-list{
+  display:grid;
+  grid-template-columns: repeat(3,1fr);
+  gap:15px;
+  margin:20px 0;
+}
+
+.item{
+  padding:15px;
+  font-size:20px;
+  cursor:pointer;
+  border-radius:10px;
+  border:1px solid #ccc;
+  background:white;
+  transition:.2s;
+}
+
+.item:hover{
+  background:#ffe9a8;
+  transform:scale(1.05);
+}
+
+.modal-buttons{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+}
+
+.fly-item {
+  position: fixed;
+  z-index: 9999;
+  pointer-events: none;
+  font-size: 30px;
+  transition: transform 0.8s ease-in-out, opacity 0.8s;
+}
+
+.bag-bounce {
+  animation: bagBounce 0.4s;
+}
+
+@keyframes bagBounce{
+
+0%{transform:scale(1);}
+30%{transform:scale(1.2);}
+60%{transform:scale(.9);}
+100%{transform:scale(1);}
+
+}
+
+#bag-items{
+    list-style:none;
+    padding:0;
+}
+
+#bag-items li{
+    display:flex;
+    justify-content:space-between;
+    padding:6px;
 }
